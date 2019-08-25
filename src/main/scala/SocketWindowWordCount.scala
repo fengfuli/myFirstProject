@@ -19,7 +19,7 @@ object SocketWindowWordCount {
    val env:StreamExecutionEnvironment = StreamExecutionEnvironment.getExecutionEnvironment
 
 
-    val text= env.socketTextStream("192.168.137.128",port)
+    val text= env.socketTextStream("localhost",port)
 
     // 解析数据（把数据打平） 分组 窗口计算 并且聚合
    import org.apache.flink.api.scala._

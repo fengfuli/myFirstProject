@@ -17,7 +17,7 @@ object StreamTableExample {
 
     val tEnv = StreamTableEnvironment.create(env)
 
-    /*val text: DataStream[String]=env.socketTextStream("192.168.137.128",9000,'\n')
+    /*val text: DataStream[String]=env.socketTextStream("localhost",9000,'\n')
 
 
     text.split(',')[0]

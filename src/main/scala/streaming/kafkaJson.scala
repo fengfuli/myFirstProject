@@ -22,8 +22,8 @@ object kafkaJson {
           .version("0.11")
           .topic("order")
           .startFromEarliest()
-          .property("zookeeper.connect", "192.168.137.128:2181")
-          .property("bootstrap.servers", "192.168.137.128:9092")
+          .property("zookeeper.connect", "localhost:2181")
+          .property("bootstrap.servers", "localhost:9092")
 
       )
       .withFormat(

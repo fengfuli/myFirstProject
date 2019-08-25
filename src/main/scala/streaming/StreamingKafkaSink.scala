@@ -17,13 +17,13 @@ object StreamingKafkaSink {
     val env=StreamExecutionEnvironment.getExecutionEnvironment
 
 
-    val text=env.socketTextStream("192.168.137.128",9000,'\n')
+    val text=env.socketTextStream("localhost",9000,'\n')
 
 
     val topic="order_sql"
     val prop=new Properties()
 
-    prop.setProperty("bootstrap.servers","192.168.137.128:9092")
+    prop.setProperty("bootstrap.servers","localhost:9092")
 
     //val myPro=new FlinkKafkaProducer011[String](topic,new KeyedSerializationSchemaWrapper[String](new SimpleStringSchema()),prop,FlinkKafkaProducer011.Semantic.EXACTLY_ONCE)
 
@@ -34,7 +34,7 @@ object StreamingKafkaSink {
 
 
     val myProducer = new FlinkKafkaProducer011[String](
-      "192.168.137.128:9092",         // broker list
+      "localhost:9092",         // broker list
       topic,               // target topic
       new SimpleStringSchema)   // serialization schema
     text.addSink(myProducer);

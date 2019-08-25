@@ -21,7 +21,7 @@ object StreamingKafkaSource {
     val topic="order_sql"
     val prop=new Properties()
 
-    prop.setProperty("bootstrap.servers","192.168.137.128:9092")
+    prop.setProperty("bootstrap.servers","localhost:9092")
     prop.setProperty("group.id","test-consumer-group")
 
     val myConsumer=new FlinkKafkaConsumer011[String](topic,new SimpleStringSchema(),prop)
