@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.abc.test</groupId>
+    <artifactId>myFirstProject</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+
+
+<dependencies>
+    <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-scala -->
+    <dependency>
+        <groupId>org.apache.flink</groupId>
+        <artifactId>flink-scala_2.11</artifactId>
+        <version>1.8.1</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-streaming-scala -->
+    <dependency>
+        <groupId>org.apache.flink</groupId>
+        <artifactId>flink-streaming-scala_2.11</artifactId>
+        <version>1.8.1</version>
+    </dependency>
+
+
+    <dependency>
+        <groupId>org.apache.flink</groupId>
+        <artifactId>flink-connector-kafka-0.11_2.11</artifactId>
+        <version>1.8.1</version>
+    </dependency>
+
+
+ <!--   <dependency>
+        <groupId>com.hortonworks</groupId>
+        <artifactId>shc-core</artifactId>
+        <version>1.0.1-1.6-s_2.10-SNAPSHOT</version>
+    </dependency>-->
+
+
+    <dependency>
+        <groupId>shc-core-1.0.1</groupId>  <!-- 库名称，也可以自定义 -->
+        <artifactId>shc-core-1.0.1</artifactId>    <!--库名称，也可以自定义-->
+        <version>1.0</version> <!--版本号-->
+        <scope>system</scope> <!--作用域-->
+        <systemPath>${basedir}\src\lib\shc-core-1.0.1-1.6-s_2.10.jar</systemPath> <!--项目根目录下的lib文件夹下-->
+    </dependency>
+
+
+
+    <dependency>
+        <groupId>org.apache.flink</groupId>
+        <artifactId>flink-table-api-scala-bridge_2.11</artifactId>
+        <version>1.8.1</version>
+    </dependency>
+
+
+    <dependency>
+        <groupId>org.apache.flink</groupId>
+        <artifactId>flink-table-planner_2.11</artifactId>
+        <version>1.8.1</version>
+    </dependency>
+
+
+ <!--   <dependency>
+        <groupId>org.apache.flink</groupId>
+        <artifactId>flink-table-common</artifactId>
+        <version>1.10-SNAPSHOT</version>
+        <scope>provided</scope>
+    </dependency>-->
+
+
+
+    <dependency>
+        <groupId>org.apache.flink</groupId>
+        <artifactId>flink-json</artifactId>
+        <version>1.8.1</version>
+    </dependency>
+
+
+
+
+</dependencies>
+
+
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <mainClass>SocketWindowWordCount</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+
+
+
+
+</project>
